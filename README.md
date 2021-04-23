@@ -54,7 +54,7 @@ Unless you have changed the settings, the username and password during developme
 After the login and upon adding the first employee a database called "peopleflow-employees" will be created.
 From the ArangoDB you can explore it and see all the changes to the database which will be made on the REST endpoints.
 
-##REST Endpoint Documentation
+## REST Endpoint Documentation
 Once **docker-compose-microservices.yml** is running you can view the API documentation for the "employee" microservice. Open your browser to:
 ```
 http://localhost:8081/swagger-ui.html
@@ -65,7 +65,7 @@ Here you can view and try the REST API exposed. The JSON structured API specific
 http://localhost:8081/v2/api-docs
 ```
 
-##Employee UI
+## Employee UI
 Once **docker-compose-microservices.yml** is running you can view the Employee UI WebApp. Open your browser to:
 ```
 http://localhost:8082
@@ -74,7 +74,7 @@ After you add an employee bellow the "Add" button the ID of the employee will be
 
 ![image info](./employee-ui-ss.png)
 
-##Testing
+## Testing
 The "employee" microservice contains a single test that invokes both REST endpoints and tests if the use-cases work.
 1. First it mocks a request to the "addEmployee" endpoint and checks if the record is successfully added to the DB. 
 2. Then changes the same employee's state by calling "setEmployeeState" and checks if the record is updated successfully.
