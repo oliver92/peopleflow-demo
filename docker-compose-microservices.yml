@@ -1,0 +1,37 @@
+version: "3"
+services:
+  #employee microservice
+  employee:
+    container_name: employee
+    build:
+      context: microservices/employee
+      dockerfile: Dockerfile
+    image: employee:latest
+    environment:
+      - ARANGO_DB_HOST=db
+      - ARANGO_DB_PORT=8529
+      - ARANGO_DB_USERNAME=root
+      - ARANGO_DB_PASSWORD=
+      - ARANGO_DB_DATABASE_NAME=peopleflow-employees
+    ports:
+      - 8081:8080
+    networks:
+      - spring-cloud-network
+  #employee-ui microservice
+  employee-ui:
+    container_name: employee-ui
+    build:
+      context: microservices/employee-ui
+      dockerfile: Dockerfile
+    image: employee-ui:latest
+    environment:
+      - EMPLOYEE_HOST=employee
+      - EMPLOYEE_PORT=8080
+    ports:
+      - 8082:8082
+    networks:
+      - spring-cloud-network
+
+networks:
+  spring-cloud-network:
+    driver: bridge
