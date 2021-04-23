@@ -60,7 +60,7 @@ Once **docker-compose-microservices.yml** is running you can view the API docume
 http://localhost:8081/swagger-ui.html
 ```
 
-Here you can view and try the REST API exposed. The JSON structured API specification can be found by visiting:
+Here you can view and try the REST API exposes. The JSON structured API specification can be found by visiting:
 ```
 http://localhost:8081/v2/api-docs
 ```
